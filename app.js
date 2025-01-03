@@ -36,6 +36,7 @@ const port = process.env.PORT
 server.listen(port, () => {
     connectDb()
     console.log(`Server run on port http://localhost:${port}`)
+    console.log(process.env.MONGO_URI)
 })
 
 socketSetup(server)
