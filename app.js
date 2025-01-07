@@ -18,15 +18,13 @@ const server = createServer(app)
 
 app.use(cookieParser())
 app.use(express.json())
-app.use(cors({
-    origin: [process.env.FRONTEND_URL],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true
-}))
 
-
-
+const corsOptions = {
+    origin: 'https://unispheredbatuproduction.onrender.com',
+    optionsSuccessStatus: 200,
+  };
+  
+  app.use(cors(corsOptions));
 app.use("/api/auth",authRoutes)
 app.use("/api/admin",adminRoutes)
 app.use("/api/user",userRoutes)
