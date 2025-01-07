@@ -36,7 +36,7 @@ const addMeet = async (req, res) => {
 const getColleges = async (req, res) => {
     try {
         const colleges = await College.find()
-        res.status(200).json(colleges)
+        res.status(200).json({colleges:colleges,message:"Colleges Fetched"})
     } catch (error) {
         res.status(400).json({error:error.message})
     }
