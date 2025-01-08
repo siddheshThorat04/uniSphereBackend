@@ -2,6 +2,7 @@ const express = require("express")
 const cors = require("cors")
 const cookieParser=require('cookie-parser')
 const { createServer } = require("http")
+const path = require("path")
 const socketSetup = require("./socket"); // Import the socket setup
 require("dotenv").config()
 
