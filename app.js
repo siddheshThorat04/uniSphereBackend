@@ -19,12 +19,11 @@ const server = createServer(app)
 app.use(cookieParser())
 app.use(express.json())
 
-const corsOptions = {
-    origin: '*',
-    optionsSuccessStatus: 200,
-  };
-  
-  app.use(cors(corsOptions));
+app.use(cors({
+  origin: 'https://uni-sphere-dbatu-production-2hj8.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 app.use("/api/auth",authRoutes)
 app.use("/api/admin",adminRoutes)
 app.use("/api/user",userRoutes)
