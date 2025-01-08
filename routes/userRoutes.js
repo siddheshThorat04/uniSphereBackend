@@ -60,8 +60,8 @@ router.post("/addEvent",upload.single("image"),async(req,res)=>{
         res.status(400).json({error:error.message})
     }
 })
-router.get("/getNews",getNews)
-router.get("/getEvents",getEvents)
-router.post("/updateProfile",updateProfile)
-router.get("/getProfile/:id",getProfile)
+router.get("/getNews",protectRoute,getNews)
+router.get("/getEvents",protectRoute,getEvents)
+router.post("/updateProfile",protectRoute,updateProfile)
+router.get("/getProfile/:id",protectRoute,getProfile)
 module.exports=router  
