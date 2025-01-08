@@ -11,7 +11,7 @@ const {
 module.exports = function (server) {
     const io = require("socket.io")(server, {
         cors: {
-            "Access-Control-Allow-Origin": process.env.FRONTEND_URL
+            "Access-Control-Allow-Origin": "https://uni-sphere-dbatu-production-2hj8.vercel.app/"
         }
     });
 
