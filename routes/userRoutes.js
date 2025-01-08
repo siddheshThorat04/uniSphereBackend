@@ -34,7 +34,7 @@ var upload=multer({
 })
 router.get("/getMeet",protectRoute,getMeet)
 
-router.post("/addNews",upload.single("image"),async(req,res)=>{
+router.post("/addNews",upload.single("image"),protectRoute,async(req,res)=>{
     try {
     
         const {title,description,isForAll}=req.body
@@ -48,7 +48,7 @@ router.post("/addNews",upload.single("image"),async(req,res)=>{
         
     }
 })
-router.post("/addEvent",upload.single("image"),async(req,res)=>{
+router.post("/addEvent",upload.single("image"),protectRoute,async(req,res)=>{
     try {
         const {Name,description,isForAll}=req.body
         const college=req.user.college
