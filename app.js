@@ -22,7 +22,7 @@ app.use(express.json())
 app.use(cors({
   origin: 'https://uni-sphere-dbatu-production-2hj8.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
+  credentials:false
 }));
 app.use("/api/auth",authRoutes)
 app.use("/api/admin",adminRoutes)
