@@ -20,7 +20,7 @@ app.use(cookieParser())
 app.use(express.json())
 
 const corsOptions = {
-    origin: 'https://uni-sphere-dbatu-production-2hj8.vercel.app',
+    origin: '*',
     optionsSuccessStatus: 200,
   };
   
