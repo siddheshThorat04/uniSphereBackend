@@ -40,9 +40,9 @@ router.post("/addNews",upload.single("image"),async(req,res)=>{
         const {title,description,isForAll}=req.body
         const image=req.file ? req.file.location:""
         const news=new News({title,description,isForAll,college:req.user.college,postedBy:req.user._id,image:image })
-        req.user.contributions+=1
+        // req.user.contributions+=1
         await news.save()
-        await req.user.save()
+        // await req.user.save()
         res.status(200).json({news})
 
     } catch (error) {
