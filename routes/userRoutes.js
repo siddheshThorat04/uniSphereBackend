@@ -36,9 +36,7 @@ router.get("/getMeet",protectRoute,getMeet)
 
 router.post("/addNews",upload.single("image"),protectRoute,async(req,res)=>{
     try {
-        // console.log(req.body);   
-        // console.log(req.file);  
-        // console.log(req.file.location);
+    
         const {title,description,isForAll}=req.body
         const image=req.file ? req.file.location:""
         const news=new News({title,description,isForAll,college:req.user.college,postedBy:req.user._id,image:image })
