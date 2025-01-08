@@ -21,7 +21,7 @@ const protectRoute = async (req, res, next) => {
             return res.status(401).json({ error: "please login first" })
 
         }
-
+        req.token= mateBatu
         req.user = user
 
         next()
