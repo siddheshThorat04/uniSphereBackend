@@ -13,4 +13,4 @@ const generateTokenAndSetCookie = (userId,res) => {
 
 }
 
-module.exports= generateTokenAndSetCookie()
+module.exports= generateTokenAndSetCookie;
